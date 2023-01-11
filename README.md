@@ -2,7 +2,7 @@
 
 
 
-#Pre-installation requirements
+## Pre-installation requirements
     -[] gcloud CLI:  https://cloud.google.com/sdk/docs/install
     
     Emulators
@@ -34,3 +34,9 @@
         https://cloud.google.com/sdk/release_notes
 
         Do you want to continue (Y/n)?
+
+        .
+        .
+        .
+        <!-- Restart emulator -->
+        $ gcloud beta emulators pubsub start --project=testproj --host-port='localhost:7001'
