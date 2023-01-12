@@ -1,11 +1,12 @@
 # README
 
-
+## Documentation
+https://lucid.app/lucidchart/1fb615e6-2711-43c8-98cb-de6b6bf03a63/edit?beaconFlowId=F308D884680E918E&invitationId=inv_8b22ab09-173b-4e87-8836-3aef82842458&page=0_0#
 
 ## Pre-installation requirements
     -[] gcloud CLI:  https://cloud.google.com/sdk/docs/install
     
-    Emulators
+    Emulators to install:
         -[] Cloud Functions Emulator:  https://cloud.google.com/functions/docs/emulator
         -[] Cloud Pub/Sub Emulator:  https://cloud.google.com/pubsub/docs/emulator
             The pubsub emulator requires Java JRE 7+ to be installed. 
@@ -56,6 +57,31 @@
     ### In a new terminal, same directory, run:
     $ (gcloud beta emulators pubsub env-init)
 
-## Create a topic
-    $ curl -s -X PUT 'http://localhost:7001/v1/projects/crypto-np-342100/topics/signals_v1'
+## Create a topic "main-topic"
+    $ curl -s -X PUT 'http://localhost:7001/v1/projects/testproj/topics/topic-a'
+    
+        {
+            "name": "projects/testproj/topics/topic-a"
+        }
+## Create a subscription
+    $ curl -s -X PUT 'http://localhost:7001/v1/projects/testproj/subscriptions/subscr_signals' \
+        -H 'Content-Type: application/json' \
+        --data '{"topic":"projects/testproj/topics/topic-a","pushConfig":{"pushEndpoint":"http://localhost:8082/projects/testproj/topics/topic-a"},"ackDeadlineSeconds": 5}'
+
+        {
+        "name": "projects/testproj/subscriptions/subscr_signals",
+        "topic": "projects/testproj/topics/topic-a",
+        "pushConfig": {
+            "pushEndpoint": "http://localhost:8082/projects/testproj/topics/main-topic"
+        },
+        "ackDeadlineSeconds": 5,
+        "messageRetentionDuration": "604800s"
+        }        
+
+## Start Cloud Functions Emulator for (function1)
+    $ cd f1
+    $ pipenv setup
+    $ pipenv install
+    $ functions-framework --debug --source=function1.py --target=main_f1 --port=8082
+
     

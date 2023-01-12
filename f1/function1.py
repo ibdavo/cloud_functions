@@ -1,6 +1,6 @@
 from google.cloud import pubsub_v1
 
-def function1(request):
+def main_f1(request):
     print(f"Received request: {request}")
     # Create a Publisher client.
     publisher = pubsub_v1.PublisherClient()
