@@ -2,6 +2,7 @@
 
 ## Documentation
 https://lucid.app/lucidchart/1fb615e6-2711-43c8-98cb-de6b6bf03a63/edit?viewport_loc=-203%2C105%2C2219%2C996%2C0_0&invitationId=inv_8b22ab09-173b-4e87-8836-3aef82842458
+# REMOVE ME:  Project cards: https://github.com/users/ibdavo/projects/3/views/1
 
 ## Pre-installation requirements
     -[] gcloud CLI:  https://cloud.google.com/sdk/docs/install
@@ -12,7 +13,9 @@ https://lucid.app/lucidchart/1fb615e6-2711-43c8-98cb-de6b6bf03a63/edit?viewport_
             The pubsub emulator requires Java JRE 7+ to be installed. 
                 curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jre-8u112-macosx-x64.dmg > jre-8u112-macosx-x64.dmg
                 curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u351-b15/jre-8u351-macosx-x64.dmg > jre-8u351-macosx-x64.dmg
-        -[] 
+
+## Clone example repo
+    $ git clone https://github.com/ibdavo/cloud_functions.git
 
 ## Start emulator
     $ gcloud beta emulators pubsub start --project=testproj --host-port='localhost:7001'
@@ -62,30 +65,41 @@ https://lucid.app/lucidchart/1fb615e6-2711-43c8-98cb-de6b6bf03a63/edit?viewport_
             {
                 "name": "projects/testproj/topics/topic-a"
             }
+
 ## Create a subscription
-    $ curl -s -X PUT 'http://localhost:7001/v1/projects/testproj/subscriptions/subscr_signals' \
+    $ curl -s -X PUT 'http://localhost:7001/v1/projects/testproj/subscriptions/subscr_f2' \
         -H 'Content-Type: application/json' \
         --data '{"topic":"projects/testproj/topics/topic-a","pushConfig":{"pushEndpoint":"http://localhost:8082/projects/testproj/topics/topic-a"},"ackDeadlineSeconds": 5}'
 
                 {
-                "name": "projects/testproj/subscriptions/subscr_signals",
+                "name": "projects/testproj/subscriptions/topic-a",
                 "topic": "projects/testproj/topics/topic-a",
                 "pushConfig": {
-                    "pushEndpoint": "http://localhost:8082/projects/testproj/topics/main-topic"
+                    "pushEndpoint": "http://localhost:8082/projects/testproj/topics/topic-a"
                 },
                 "ackDeadlineSeconds": 5,
                 "messageRetentionDuration": "604800s"
-                }        
+                }   
 
-## Test topic
+## Test publication to topic "topic-a"
     $ curl -s -X POST 'http://localhost:7001/v1/projects/testproj/topics/topic-a:publish' \
     -H 'Content-Type: application/json' \
     --data '{"messages":[{"data":"eyJmb28iOiJiYXIifQ=="}]}'
 
 ## Start Cloud Functions Emulator for (function1)
     $ cd f1
-    $ pipenv setup
     $ pipenv install
+    $ pipenv shell
+    $ cd cloud_functions/f1
+    $ export PUBSUB_EMULATOR_HOST=localhost:7001
     $ functions-framework --debug --source=function1.py --target=main_f1 --port=8080
+
+## Start Cloud Functions Emulator for (function2)
+    $ cd f2
+    $ pipenv install
+    $ pipenv shell
+    $ cd cloud_functions/f2
+    $ export PUBSUB_EMULATOR_HOST=localhost:7001
+    $ functions-framework --debug --source=function2.py --target=main_f2 --port=8082
 
     
