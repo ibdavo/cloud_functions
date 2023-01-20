@@ -12,7 +12,6 @@ def main_f1(request):
     
     # Create json data for testing pubsub message
     json_data = {
-        "message" : "hello world",
         "status" : "salutations",
         "data" : "payload data here..."
     }

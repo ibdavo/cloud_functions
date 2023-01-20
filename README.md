@@ -14,6 +14,9 @@ https://lucid.app/lucidchart/1fb615e6-2711-43c8-98cb-de6b6bf03a63/edit?viewport_
                 curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jre-8u112-macosx-x64.dmg > jre-8u112-macosx-x64.dmg
                 curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u351-b15/jre-8u351-macosx-x64.dmg > jre-8u351-macosx-x64.dmg
 
+## Clone example repo
+    $ git clone https://github.com/ibdavo/cloud_functions.git
+
 ## Start emulator
     $ gcloud beta emulators pubsub start --project=testproj --host-port='localhost:7001'
         You need the [pubsub-emulator] component to use the Google Cloud
