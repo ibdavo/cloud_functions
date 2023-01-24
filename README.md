@@ -11,8 +11,7 @@ https://lucid.app/lucidchart/1fb615e6-2711-43c8-98cb-de6b6bf03a63/edit?viewport_
         -[] Cloud Functions Emulator:  https://cloud.google.com/functions/docs/emulator
         -[] Cloud Pub/Sub Emulator:  https://cloud.google.com/pubsub/docs/emulator
             The pubsub emulator requires Java JRE 7+ to be installed. 
-                curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jre-8u112-macosx-x64.dmg > jre-8u112-macosx-x64.dmg
-                curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u351-b15/jre-8u351-macosx-x64.dmg > jre-8u351-macosx-x64.dmg
+
 
 ## Clone example repo
     $ git clone https://github.com/ibdavo/cloud_functions.git
