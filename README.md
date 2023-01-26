@@ -18,6 +18,7 @@ https://github.com/ibdavo/cloud_functions.git
             The pubsub emulator requires Java JRE 7+ to be installed. 
 
 
+
 # Lesson A:  Single Cloud Function
 ## Clone example repo
     $ git clone https://github.com/ibdavo/cloud_functions.git
@@ -32,6 +33,19 @@ https://github.com/ibdavo/cloud_functions.git
     $ curl -X POST -H "Content-Type: application/json" -d '{"name":"Dave"}' http://localhost:8080
 
             Hello Dave
+
+## Deploy cloud function to Google cloud
+### Use gcloud to authorize login
+    $ gcloud auth login
+
+### Use gcloud to set project
+    $ gcloud config set project testproj
+    
+    $ gcloud functions deploy f1 --runtime python39 --trigger-http --allow-unauthenticated --project=testproj --region=us-central1
+
+            Deploying function (may take a while - up to 2 minutes)...done.
+            Available memory allocated: 256MB
+            Function URL (f1): https://us-central1-testproj.cloudfunctions.net/f1
 ## Wrap-up and exit.  Stop emulator, exit pipenv shell
     $ control-C
     $ exit
