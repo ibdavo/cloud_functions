@@ -4,10 +4,8 @@ This is a simple example of how to use the Cloud Functions Emulator to build and
 ## Architecture documentation
     Lucid document is located [here](https://lucid.app/lucidchart/1fb615e6-2711-43c8-98cb-de6b6bf03a63/edit?viewport_loc=-203%2C105%2C2219%2C996%2C0_0&invitationId=inv_8b22ab09-173b-4e87-8836-3aef82842458)
 
-## Repo
-https://github.com/ibdavo/cloud_functions.git
-
-## REMOVE ME:  Project cards: https://github.com/users/ibdavo/projects/3/views/1
+## Clone Repo
+    $ git clone https://github.com/ibdavo/cloud_functions.git
 
 ## Pre-installation requirements
     -[] gcloud CLI:  https://cloud.google.com/sdk/docs/install
