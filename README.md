@@ -52,9 +52,7 @@ This is a simple example of how to use the Cloud Functions Emulator to build and
 
 # Lesson B:  Two Cloud Functions communicating via Pub / Sub
 
-### A word of caution.  Using the pubsub emulator can have precarious side effects. 
-### Please take note of the cleanup steps at the end of this lesson.  If you do not, you will be 
-### haunted by the ghost of Christmas past.  You have been warned.
+### A word of caution.  Using the pubsub emulator can have precarious side effects. Please take note of the cleanup steps at the end of this lesson.  If you do not, you will be haunted by the ghost of Christmas past.  You have been warned.
 
 ## Start emulator in new terminal
     $ gcloud beta emulators pubsub start --project=testproj --host-port='localhost:7001'
