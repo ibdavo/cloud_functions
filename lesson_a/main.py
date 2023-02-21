@@ -1,16 +1,20 @@
 from flask import Response
+import os
 
 def main(request):
     try:
         print(f"[{__name__}] Started...")
         # get request data
-        if request.args:
-            data = request.args  # data is in query string params
+        request_json = request.get_json()
+        if request.args and 'message' in request.args:
+            data= request.args.get('message')
+        elif request_json and 'message' in request_json:
+            data= request_json['message']
         else:
-            data = request.json  # data is in body
-        
-        print(f"[{__name__}] Hello, {data}")
-
+            data= f'Hello World!'
+        # debug = os.environ.get("DEBUG")
+        # print(f"Debug variable: {debug}")
+        print(f"[{__name__}] Finished...")
         return Response(response=data, status=200, mimetype="application/json")        
 
     except Exception as e:
