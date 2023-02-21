@@ -30,7 +30,7 @@ This is a simple example of how to use the Cloud Functions Emulator to build and
 ## Test Cloud Function (start new terminal)
     $ curl -X POST -H "Content-Type: application/json" -d '{"name":"Dave"}' http://localhost:8080
 
-            Hello Dave
+            Hello World
 
 ## Deploy cloud function to Google cloud
 ### Use gcloud to authorize login
