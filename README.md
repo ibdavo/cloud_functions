@@ -1,5 +1,5 @@
 # README
-This is a simple example of how to use the Cloud Functions Emulator to build and test a Cloud Function.   It is divided into two lessons.  The first is the building and testing of a single Cloud Function.  The second is the building and testing two Cloud Functions that communicate via Pub / Sub.
+This is a simple example of how to use the Cloud Functions Emulator to build and test a Cloud Functions.   It is divided into two lessons.  The first is the building and testing of a single Cloud Function.  The second is the building and testing two Cloud Functions that communicate via Pub / Sub.
 
 ## Architecture documentation
     Lucid document is located [here](https://lucid.app/lucidchart/1fb615e6-2711-43c8-98cb-de6b6bf03a63/edit?viewport_loc=-203%2C105%2C2219%2C996%2C0_0&invitationId=inv_8b22ab09-173b-4e87-8836-3aef82842458)
