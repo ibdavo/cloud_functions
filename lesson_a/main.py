@@ -9,7 +9,7 @@ def main(request):
         else:
             data = request.json  # data is in body
         
-        print(f"[{__name__}] Data: {data}")
+        print(f"[{__name__}] Hello, {data}")
 
         return Response(response=data, status=200, mimetype="application/json")        
 
