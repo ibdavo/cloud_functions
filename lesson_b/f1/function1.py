@@ -21,10 +21,7 @@ def main_f1(request):
     publisher = pubsub_v1.PublisherClient()
 
     # Publish a message to the topic.
-    # future = publisher.publish(topic=topic, data=json_encoded)
     future = publisher.publish(topic=topic, data=json_encoded, **pubsub_attributes)
-    # future = pubsub_client.publish(topic=topic, data=json_str, **pubsub_attributes)
-    # future = pubsub_client.publish(topic=topic, data=json_str)    
     if future.exception(timeout=30):
         print(future.exception())
     else:
