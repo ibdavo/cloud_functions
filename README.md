@@ -39,7 +39,7 @@ This is a simple example of how to use the Cloud Functions Emulator to build and
 ### Use gcloud to set project
     $ gcloud config set project testproj
     
-    $ gcloud functions deploy f1 --runtime python39 --trigger-http --allow-unauthenticated --project=testproj --region=us-central1
+    $ gcloud functions deploy f1 --runtime python39 --trigger-http --project=testproj --region=us-central1
 
             Deploying function (may take a while - up to 2 minutes)...done.
             Available memory allocated: 256MB
