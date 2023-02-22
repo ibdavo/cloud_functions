@@ -7,15 +7,16 @@ This is a simple example of how to use the Cloud Functions Emulator to build and
 ## Clone Repo
     $ git clone https://github.com/ibdavo/cloud_functions.git
 
-## Pre-installation requirements
-    -[] gcloud CLI:  https://cloud.google.com/sdk/docs/install
-    
+## Pre-installation requirements    
     Emulators to install:
         -[] Cloud Functions Emulator:  https://cloud.google.com/functions/docs/emulator
         -[] Cloud Pub/Sub Emulator:  https://cloud.google.com/pubsub/docs/emulator
             The pubsub emulator requires Java JRE 7+ to be installed. 
-
-
+    Other installation items
+        -[] gcloud CLI:  https://cloud.google.com/sdk/docs/install
+        -[] Python
+        -[] pubsub_v1 (pip install google-cloud-pubsub)
+        -[] GitHub 
 
 # Lesson A:  Single Cloud Function
 ## Clone example repo
