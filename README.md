@@ -81,6 +81,7 @@ This is a simple example of how to use the Cloud Functions Emulator to build and
         .
         <!-- Restart emulator -->
     $ gcloud beta emulators pubsub start --project=testproj --host-port='localhost:7001'
+    
             Executing: /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/platform/pubsub-emulator/bin/cloud-pubsub-emulator --host=localhost --port=7001
             [pubsub] This is the Google Pub/Sub fake.
             [pubsub] Implementation may be incomplete or differ from the real system.
