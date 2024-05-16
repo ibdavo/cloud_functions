@@ -16,8 +16,7 @@ def main_f2(request):
         if 'message' in data.keys():
             # decode data and update data dict to schema
             decoded_data = json.loads(base64.b64decode(data['message']['data']).decode('utf-8'))
-            data = decoded_data
-            print(f"[{__name__}] Decoded data: {data}")
+            print(f"[{__name__}] Decoded data: {decoded_data}")
 
     except Exception as e:
         print(f"[{__name__}] Exception: {e}")
