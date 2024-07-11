@@ -40,7 +40,9 @@ This is a simple example of how to use the Cloud Functions Emulator to build and
 ### Use gcloud to set project
     $ gcloud config set project testproj
     
-    $ gcloud functions deploy f1 --runtime python39 --trigger-http --project=testproj --region=us-central1
+    $ gcloud functions deploy f1 --runtime python39 --trigger-http --project=snowmentor-np-cah --region=us-central1
+
+    $ gcloud functions deploy main --runtime python310 --trigger-http --entry-point --region us-east4 --env-vars-file env.yaml --project snowmentor-np-cah  --memory 128Mi --ingress-settings=internal-only --no-allow-unauthenticated --gen2 --timeout 3 --max-instances 1
 
             Deploying function (may take a while - up to 2 minutes)...done.
             Available memory allocated: 256MB

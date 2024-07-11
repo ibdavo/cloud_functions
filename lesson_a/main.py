@@ -12,8 +12,8 @@ def main(request):
             data= request_json['message']
         else:
             data= f'Hello World!'
-        # debug = os.environ.get("DEBUG")
-        # print(f"Debug variable: {debug}")
+        debug = os.environ.get("DEBUG")
+        print(f"Debug variable: {debug}")
         print(f"[{__name__}] Finished...")
         return Response(response=data, status=200, mimetype="application/json")        
 
